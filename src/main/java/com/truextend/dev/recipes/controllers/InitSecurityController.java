@@ -22,6 +22,7 @@ public class InitSecurityController {
 
     @Autowired
     private AccountsService accountsService;
+
     @Autowired
     private JwtGenerator jwtGenerator;
 

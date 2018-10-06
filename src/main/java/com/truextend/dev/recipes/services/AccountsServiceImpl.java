@@ -26,12 +26,21 @@ public class AccountsServiceImpl implements AccountsService {
         String messageTemp = "";
         boolean status = false;
 
+        Accounts editAccounts = null;
         HashMap resultMap = new HashMap();
 
         try {
-            this.accountRepository.delete(accounts);
-            resultMap.put(ConstantsRecipes.OBJECT, accounts);
-            status = true;
+            editAccounts = this.accountRepository.findOne(accounts.getId());
+            if(editAccounts != null){
+                //logical deleting only
+                editAccounts.setState(ConstantsRecipes.STATE_INACTIVE);
+                this.accountRepository.deleteAccounts(editAccounts);
+                resultMap.put(ConstantsRecipes.OBJECT, editAccounts);
+                status = true;
+            }
+            else{
+                messageTemp = ConstantsRecipes.MESSAGE_NOT_FOUND_OBJECT;
+            }
         }catch (Exception er){
             messageTemp = er.getMessage();
             status = false;
@@ -57,7 +66,12 @@ public class AccountsServiceImpl implements AccountsService {
         HashMap resultMap = new HashMap();
 
         try {
-            this.accountRepository.findAll().forEach(listAccounts::add);
+            if(accounts == null){
+                accounts = new Accounts();
+            }
+            accounts.setState(ConstantsRecipes.STATE_ACTIVE);
+
+            listAccounts = this.accountRepository.findAllAccount(accounts);
             if(listAccounts != null){
                 resultMap.put(ConstantsRecipes.OBJECT, listAccounts);
                 status = true;
@@ -149,7 +163,11 @@ public class AccountsServiceImpl implements AccountsService {
         Accounts verifyAccount = null;
 
         try {
-            verifyAccount = this.accountRepository.findAccountByByEmail(accounts);
+            if(accounts.getId() == null){
+                //verify only if new account
+                verifyAccount = this.accountRepository.findAccountByByEmail(accounts);
+            }
+
             if(verifyAccount == null){
                 this.accountRepository.save(accounts);
 

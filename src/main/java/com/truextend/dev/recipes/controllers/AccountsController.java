@@ -167,8 +167,11 @@ public class AccountsController {
         return response;
     }
 
-
-
+    /**
+     * method delete user accont only logical deleting (change state to 0)
+     * @param accounts
+     * @return
+     */
     @ApiOperation(value = ConstantsRecipes.DESC_DELETE_ACCOUNTS)
     @ResponseBody
     @RequestMapping(value = "/delete", method = RequestMethod.DELETE, produces = ConstantsRecipes.APP_JSON)

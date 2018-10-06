@@ -10,8 +10,12 @@ public class ConstantsRecipes {
     public static final String OBJECT = "OBJECT";
     public static final String SECRET = "truextend";
     public static final String STATUS = "STATUS";
+    public static final Integer STATE_ACTIVE = 1;
+    public static final Integer STATE_INACTIVE = 0;
 
     //user messages
+    public static final String MESSAGE_EXIST_USER_ACCOUNT = "The account is already registered";
+    public static final String MESSAGE_NOT_FOUND_OBJECT = "Data not found";
     public static final String UNAUTHORIZED_USER = "Unauthorized user";
 
     //format date
@@ -36,5 +40,4 @@ public class ConstantsRecipes {
     public static final String DESC_GET_ACCOUNTS = "Return an user accounts";
     public static final String VALUE_ACCOUNTS_CONTROLLER = "Accounts Controller";
 
-    public static final String MESSAGE_EXIST_USER_ACCOUNT = "The account is already registered";
 }

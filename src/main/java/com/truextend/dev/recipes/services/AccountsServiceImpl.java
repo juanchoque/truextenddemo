@@ -121,6 +121,9 @@ public class AccountsServiceImpl implements AccountsService {
                 resultMap.put(ConstantsRecipes.OBJECT, resultAccounts);
                 status = true;
             }
+            else{
+                messageTemp = ConstantsRecipes.UNAUTHORIZED_USER;
+            }
         }catch (Exception er){
             status = false;
             messageTemp = er.getMessage();

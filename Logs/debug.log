@@ -3281,3 +3281,294 @@ Caused by: org.hibernate.MappingException: Repeated column in mapping for entity
 2018-10-06 21:58:35 [http-nio-8086-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
 2018-10-06 21:58:35 [http-nio-8086-exec-2] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
 2018-10-06 21:58:35 [http-nio-8086-exec-2] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 48 ms
+2018-10-06 22:12:57 [main] INFO  c.t.dev.recipes.RecipesApplication - Starting RecipesApplication on DESKTOP-SK1H2T1 with PID 14584 (D:\developer\recipes\target\classes started by Juan in D:\developer\recipes)
+2018-10-06 22:12:57 [main] DEBUG c.t.dev.recipes.RecipesApplication - Running with Spring Boot v1.5.3.RELEASE, Spring v4.3.8.RELEASE
+2018-10-06 22:12:57 [main] INFO  c.t.dev.recipes.RecipesApplication - No active profile set, falling back to default profiles: default
+2018-10-06 22:12:57 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@31d7b7bf: startup date [Sat Oct 06 22:12:57 GMT+01:00 2018]; root of context hierarchy
+2018-10-06 22:13:01 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2eaa911d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-06 22:13:01 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$c7585957] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-06 22:13:01 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-06 22:13:01 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6a9950f1' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-06 22:13:01 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$ec2cfc09] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-06 22:13:01 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-06 22:13:02 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8086 (http)
+2018-10-06 22:13:02 [main] INFO  o.a.catalina.core.StandardService - Starting service Tomcat
+2018-10-06 22:13:02 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2018-10-06 22:13:02 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-10-06 22:13:02 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4844 ms
+2018-10-06 22:13:03 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-10-06 22:13:03 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-10-06 22:13:03 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-10-06 22:13:03 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-10-06 22:13:03 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-10-06 22:13:03 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Filter jwtAuthenticationTokenFilter was not registered (disabled)
+2018-10-06 22:13:03 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-10-06 22:13:03 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'webServlet' to [/h2_console/*]
+2018-10-06 22:13:04 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-10-06 22:13:04 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-10-06 22:13:04 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2018-10-06 22:13:04 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-10-06 22:13:04 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2018-10-06 22:13:04 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-10-06 22:13:05 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2018-10-06 22:13:05 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2018-10-06 22:13:05 [main] INFO  o.h.t.s.e.i.InformationExtractorJdbcDatabaseMetaDataImpl - HHH000262: Table not found: accounts
+2018-10-06 22:13:05 [main] INFO  o.h.t.s.e.i.InformationExtractorJdbcDatabaseMetaDataImpl - HHH000262: Table not found: accounts
+2018-10-06 22:13:05 [main] INFO  o.h.t.s.e.i.InformationExtractorJdbcDatabaseMetaDataImpl - HHH000262: Table not found: ingredients
+2018-10-06 22:13:05 [main] INFO  o.h.t.s.e.i.InformationExtractorJdbcDatabaseMetaDataImpl - HHH000262: Table not found: ingredients
+2018-10-06 22:13:05 [main] INFO  o.h.t.s.e.i.InformationExtractorJdbcDatabaseMetaDataImpl - HHH000262: Table not found: recipes
+2018-10-06 22:13:05 [main] INFO  o.h.t.s.e.i.InformationExtractorJdbcDatabaseMetaDataImpl - HHH000262: Table not found: recipes
+2018-10-06 22:13:06 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-10-06 22:13:06 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2018-10-06 22:13:07 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/accounts/list],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.truextend.dev.recipes.controllers.AccountsController.listAccounts(com.truextend.dev.recipes.model.Accounts)
+2018-10-06 22:13:07 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/accounts/add],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.truextend.dev.recipes.controllers.AccountsController.addAccounts(com.truextend.dev.recipes.model.Accounts)
+2018-10-06 22:13:07 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/accounts/delete],methods=[DELETE],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.truextend.dev.recipes.controllers.AccountsController.deleteAccounts(com.truextend.dev.recipes.model.Accounts)
+2018-10-06 22:13:07 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/accounts/get],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.truextend.dev.recipes.controllers.AccountsController.getAccounts(com.truextend.dev.recipes.model.Accounts)
+2018-10-06 22:13:07 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/token/verify],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.truextend.dev.recipes.controllers.InitSecurityController.verifyAccount(com.truextend.dev.recipes.model.Accounts)
+2018-10-06 22:13:07 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/token/createaccount],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.truextend.dev.recipes.controllers.InitSecurityController.createAccount(com.truextend.dev.recipes.model.Accounts)
+2018-10-06 22:13:07 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/v2/api-docs],methods=[GET]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String)
+2018-10-06 22:13:07 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-10-06 22:13:07 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-10-06 22:13:07 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-06 22:13:07 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a336377, org.springframework.security.web.context.SecurityContextPersistenceFilter@55061418, org.springframework.security.web.header.HeaderWriterFilter@6728370a, org.springframework.web.filter.CorsFilter@65af05b2, org.springframework.security.web.authentication.logout.LogoutFilter@52285a5f, com.truextend.dev.recipes.security.JwtAuthenticationTokenFilter@54023654, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6ec3d8e4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6e981e78, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@11ad095c, org.springframework.security.web.session.SessionManagementFilter@6ba0ee4a, org.springframework.security.web.access.ExceptionTranslationFilter@6abb7b7d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@52657d5f]
+2018-10-06 22:13:07 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/h2_console/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4db728df, org.springframework.security.web.context.SecurityContextPersistenceFilter@5613247e, org.springframework.security.web.header.HeaderWriterFilter@7752c0e7, org.springframework.security.web.authentication.logout.LogoutFilter@79b7c350, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@586737ff, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6851b296, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@9e50283, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@b0d3e7, org.springframework.security.web.session.SessionManagementFilter@77ba583, org.springframework.security.web.access.ExceptionTranslationFilter@6f7a20da, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1c90029b]
+2018-10-06 22:13:08 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@31d7b7bf: startup date [Sat Oct 06 22:12:57 GMT+01:00 2018]; root of context hierarchy
+2018-10-06 22:13:08 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-06 22:13:08 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-06 22:13:08 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-06 22:13:08 [main] INFO  o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2018-10-06 22:13:08 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-10-06 22:13:08 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found {0} custom documentation plugin(s)
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method listAccounts was accounts-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: listAccounts belongs to groups: [[ResourceGroup{groupName='accounts-controller', position=0, controller=com.truextend.dev.recipes.controllers.AccountsController}]] 
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Adding resource to group:ResourceGroup{groupName='accounts-controller', position=0, controller=com.truextend.dev.recipes.controllers.AccountsController} with description:Administration users accounts for handler method:listAccounts
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method addAccounts was accounts-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: addAccounts belongs to groups: [[ResourceGroup{groupName='accounts-controller', position=0, controller=com.truextend.dev.recipes.controllers.AccountsController}]] 
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Adding resource to group:ResourceGroup{groupName='accounts-controller', position=0, controller=com.truextend.dev.recipes.controllers.AccountsController} with description:Administration users accounts for handler method:addAccounts
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method deleteAccounts was accounts-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: deleteAccounts belongs to groups: [[ResourceGroup{groupName='accounts-controller', position=0, controller=com.truextend.dev.recipes.controllers.AccountsController}]] 
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Adding resource to group:ResourceGroup{groupName='accounts-controller', position=0, controller=com.truextend.dev.recipes.controllers.AccountsController} with description:Administration users accounts for handler method:deleteAccounts
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method getAccounts was accounts-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: getAccounts belongs to groups: [[ResourceGroup{groupName='accounts-controller', position=0, controller=com.truextend.dev.recipes.controllers.AccountsController}]] 
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Adding resource to group:ResourceGroup{groupName='accounts-controller', position=0, controller=com.truextend.dev.recipes.controllers.AccountsController} with description:Administration users accounts for handler method:getAccounts
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method verifyAccount was init-security-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: verifyAccount belongs to groups: [[ResourceGroup{groupName='init-security-controller', position=0, controller=com.truextend.dev.recipes.controllers.InitSecurityController}]] 
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Adding resource to group:ResourceGroup{groupName='init-security-controller', position=0, controller=com.truextend.dev.recipes.controllers.InitSecurityController} with description:Init Security Controller for handler method:verifyAccount
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method createAccount was init-security-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: createAccount belongs to groups: [[ResourceGroup{groupName='init-security-controller', position=0, controller=com.truextend.dev.recipes.controllers.InitSecurityController}]] 
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Adding resource to group:ResourceGroup{groupName='init-security-controller', position=0, controller=com.truextend.dev.recipes.controllers.InitSecurityController} with description:Init Security Controller for handler method:createAccount
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method error was basic-error-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: error belongs to groups: [[ResourceGroup{groupName='basic-error-controller', position=0, controller=org.springframework.boot.autoconfigure.web.BasicErrorController}]] 
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Adding resource to group:ResourceGroup{groupName='basic-error-controller', position=0, controller=org.springframework.boot.autoconfigure.web.BasicErrorController} with description:Basic Error Controller for handler method:error
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method errorHtml was basic-error-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: errorHtml belongs to groups: [[ResourceGroup{groupName='basic-error-controller', position=0, controller=org.springframework.boot.autoconfigure.web.BasicErrorController}]] 
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Adding resource to group:ResourceGroup{groupName='basic-error-controller', position=0, controller=org.springframework.boot.autoconfigure.web.BasicErrorController} with description:Basic Error Controller for handler method:errorHtml
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Created resource listing Path: /default/basic-error-controller Description: basic-error-controller Position: 0
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Created resource listing Path: /default/init-security-controller Description: init-security-controller Position: 0
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Created resource listing Path: /default/accounts-controller Description: accounts-controller Position: 0
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method error was basic-error-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method error was basic-error-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method error was basic-error-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method error was basic-error-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method error was basic-error-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method error was basic-error-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method error was basic-error-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method error was basic-error-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method errorHtml was basic-error-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method errorHtml was basic-error-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method errorHtml was basic-error-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method errorHtml was basic-error-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method errorHtml was basic-error-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method errorHtml was basic-error-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method errorHtml was basic-error-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method errorHtml was basic-error-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method verifyAccount was init-security-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method createAccount was init-security-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method listAccounts was accounts-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method addAccounts was accounts-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method deleteAccounts was accounts-controller
+2018-10-06 22:13:09 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method getAccounts was accounts-controller
+2018-10-06 22:13:09 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8086 (http)
+2018-10-06 22:13:09 [main] INFO  c.t.dev.recipes.RecipesApplication - Started RecipesApplication in 12.791 seconds (JVM running for 13.516)
+2018-10-06 22:13:15 [http-nio-8086-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-10-06 22:13:15 [http-nio-8086-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-10-06 22:13:15 [http-nio-8086-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 32 ms
+2018-10-06 22:16:37 [http-nio-8086-exec-1] DEBUG c.t.d.r.s.JwtAuthenticationTokenFilter - Request is to process authentication
+2018-10-06 22:16:37 [http-nio-8086-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+java.lang.RuntimeException: JWT Token is incorrect>
+	at com.truextend.dev.recipes.security.JwtValidator.validate(JwtValidator.java:27)
+	at com.truextend.dev.recipes.security.JwtAuthenticationProvider.retrieveUser(JwtAuthenticationProvider.java:40)
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:144)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:174)
+	at com.truextend.dev.recipes.security.JwtAuthenticationTokenFilter.attemptAuthentication(JwtAuthenticationTokenFilter.java:35)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:346)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:262)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:80)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:799)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1455)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2018-10-06 22:16:48 [http-nio-8086-exec-4] DEBUG c.t.d.r.s.JwtAuthenticationTokenFilter - Request is to process authentication
+2018-10-06 22:16:48 [http-nio-8086-exec-4] DEBUG c.t.d.r.s.JwtAuthenticationTokenFilter - Authentication success. Updating SecurityContextHolder to contain: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@82873161: Principal: com.truextend.dev.recipes.security.utilSecurity.JwtUserDetails@7d4b0b22; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: null
+2018-10-06 22:18:09 [main] INFO  c.t.dev.recipes.RecipesApplication - Starting RecipesApplication on DESKTOP-SK1H2T1 with PID 9968 (D:\developer\recipes\target\classes started by Juan in D:\developer\recipes)
+2018-10-06 22:18:09 [main] DEBUG c.t.dev.recipes.RecipesApplication - Running with Spring Boot v1.5.3.RELEASE, Spring v4.3.8.RELEASE
+2018-10-06 22:18:09 [main] INFO  c.t.dev.recipes.RecipesApplication - No active profile set, falling back to default profiles: default
+2018-10-06 22:18:09 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@31d7b7bf: startup date [Sat Oct 06 22:18:09 GMT+01:00 2018]; root of context hierarchy
+2018-10-06 22:18:12 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2eaa911d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-06 22:18:12 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$c7585957] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-06 22:18:12 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-06 22:18:12 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6a9950f1' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-06 22:18:13 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$ec2cfc09] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-06 22:18:13 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-06 22:18:13 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8086 (http)
+2018-10-06 22:18:13 [main] INFO  o.a.catalina.core.StandardService - Starting service Tomcat
+2018-10-06 22:18:13 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2018-10-06 22:18:13 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-10-06 22:18:13 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4571 ms
+2018-10-06 22:18:15 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-10-06 22:18:15 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-10-06 22:18:15 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-10-06 22:18:15 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-10-06 22:18:15 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-10-06 22:18:15 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Filter jwtAuthenticationTokenFilter was not registered (disabled)
+2018-10-06 22:18:15 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-10-06 22:18:15 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'webServlet' to [/h2_console/*]
+2018-10-06 22:18:16 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-10-06 22:18:16 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-10-06 22:18:16 [main] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2018-10-06 22:18:16 [main] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-10-06 22:18:16 [main] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2018-10-06 22:18:16 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-10-06 22:18:16 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2018-10-06 22:18:17 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2018-10-06 22:18:17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-10-06 22:18:17 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2018-10-06 22:18:18 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/accounts/list],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.truextend.dev.recipes.controllers.AccountsController.listAccounts(com.truextend.dev.recipes.model.Accounts)
+2018-10-06 22:18:18 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/accounts/add],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.truextend.dev.recipes.controllers.AccountsController.addAccounts(com.truextend.dev.recipes.model.Accounts)
+2018-10-06 22:18:18 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/accounts/delete],methods=[DELETE],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.truextend.dev.recipes.controllers.AccountsController.deleteAccounts(com.truextend.dev.recipes.model.Accounts)
+2018-10-06 22:18:18 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/accounts/get],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.truextend.dev.recipes.controllers.AccountsController.getAccounts(com.truextend.dev.recipes.model.Accounts)
+2018-10-06 22:18:18 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/token/createaccount],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.truextend.dev.recipes.controllers.InitSecurityController.createAccount(com.truextend.dev.recipes.model.Accounts)
+2018-10-06 22:18:18 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/token/verify],methods=[POST],produces=[application/json]}" onto public org.springframework.http.ResponseEntity<java.lang.Object> com.truextend.dev.recipes.controllers.InitSecurityController.verifyAccount(com.truextend.dev.recipes.model.Accounts)
+2018-10-06 22:18:18 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/v2/api-docs],methods=[GET]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String)
+2018-10-06 22:18:18 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-10-06 22:18:18 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-10-06 22:18:18 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-06 22:18:18 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@70485aa, org.springframework.security.web.context.SecurityContextPersistenceFilter@1ed9d173, org.springframework.security.web.header.HeaderWriterFilter@7f2c995b, org.springframework.web.filter.CorsFilter@4bf8b77, org.springframework.security.web.authentication.logout.LogoutFilter@12aa381f, com.truextend.dev.recipes.security.JwtAuthenticationTokenFilter@7182d4ed, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@498a4d62, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@143413cd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@e06ec83, org.springframework.security.web.session.SessionManagementFilter@6068ebb2, org.springframework.security.web.access.ExceptionTranslationFilter@55061418, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2c2a903f]
+2018-10-06 22:18:18 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/h2_console/**'], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5c4714ef, org.springframework.security.web.context.SecurityContextPersistenceFilter@685e6a68, org.springframework.security.web.header.HeaderWriterFilter@586737ff, org.springframework.security.web.authentication.logout.LogoutFilter@2d07aacc, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@ff5d4f1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2fb48970, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e8d9bb6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@c94bd18, org.springframework.security.web.session.SessionManagementFilter@4cd7e993, org.springframework.security.web.access.ExceptionTranslationFilter@79b7c350, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@44492c06]
+2018-10-06 22:18:19 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@31d7b7bf: startup date [Sat Oct 06 22:18:09 GMT+01:00 2018]; root of context hierarchy
+2018-10-06 22:18:19 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-06 22:18:19 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-06 22:18:19 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-06 22:18:19 [main] INFO  o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2018-10-06 22:18:19 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found {0} custom documentation plugin(s)
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method listAccounts was accounts-controller
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: listAccounts belongs to groups: [[ResourceGroup{groupName='accounts-controller', position=0, controller=com.truextend.dev.recipes.controllers.AccountsController}]] 
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Adding resource to group:ResourceGroup{groupName='accounts-controller', position=0, controller=com.truextend.dev.recipes.controllers.AccountsController} with description:Administration users accounts for handler method:listAccounts
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method addAccounts was accounts-controller
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: addAccounts belongs to groups: [[ResourceGroup{groupName='accounts-controller', position=0, controller=com.truextend.dev.recipes.controllers.AccountsController}]] 
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Adding resource to group:ResourceGroup{groupName='accounts-controller', position=0, controller=com.truextend.dev.recipes.controllers.AccountsController} with description:Administration users accounts for handler method:addAccounts
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method deleteAccounts was accounts-controller
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: deleteAccounts belongs to groups: [[ResourceGroup{groupName='accounts-controller', position=0, controller=com.truextend.dev.recipes.controllers.AccountsController}]] 
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Adding resource to group:ResourceGroup{groupName='accounts-controller', position=0, controller=com.truextend.dev.recipes.controllers.AccountsController} with description:Administration users accounts for handler method:deleteAccounts
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method getAccounts was accounts-controller
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: getAccounts belongs to groups: [[ResourceGroup{groupName='accounts-controller', position=0, controller=com.truextend.dev.recipes.controllers.AccountsController}]] 
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Adding resource to group:ResourceGroup{groupName='accounts-controller', position=0, controller=com.truextend.dev.recipes.controllers.AccountsController} with description:Administration users accounts for handler method:getAccounts
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method createAccount was init-security-controller
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: createAccount belongs to groups: [[ResourceGroup{groupName='init-security-controller', position=0, controller=com.truextend.dev.recipes.controllers.InitSecurityController}]] 
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Adding resource to group:ResourceGroup{groupName='init-security-controller', position=0, controller=com.truextend.dev.recipes.controllers.InitSecurityController} with description:Init Security Controller for handler method:createAccount
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method verifyAccount was init-security-controller
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: verifyAccount belongs to groups: [[ResourceGroup{groupName='init-security-controller', position=0, controller=com.truextend.dev.recipes.controllers.InitSecurityController}]] 
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Adding resource to group:ResourceGroup{groupName='init-security-controller', position=0, controller=com.truextend.dev.recipes.controllers.InitSecurityController} with description:Init Security Controller for handler method:verifyAccount
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method error was basic-error-controller
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: error belongs to groups: [[ResourceGroup{groupName='basic-error-controller', position=0, controller=org.springframework.boot.autoconfigure.web.BasicErrorController}]] 
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Adding resource to group:ResourceGroup{groupName='basic-error-controller', position=0, controller=org.springframework.boot.autoconfigure.web.BasicErrorController} with description:Basic Error Controller for handler method:error
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method errorHtml was basic-error-controller
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Request mapping: errorHtml belongs to groups: [[ResourceGroup{groupName='basic-error-controller', position=0, controller=org.springframework.boot.autoconfigure.web.BasicErrorController}]] 
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Adding resource to group:ResourceGroup{groupName='basic-error-controller', position=0, controller=org.springframework.boot.autoconfigure.web.BasicErrorController} with description:Basic Error Controller for handler method:errorHtml
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Created resource listing Path: /default/basic-error-controller Description: basic-error-controller Position: 0
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Created resource listing Path: /default/init-security-controller Description: init-security-controller Position: 0
+2018-10-06 22:18:19 [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Created resource listing Path: /default/accounts-controller Description: accounts-controller Position: 0
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method error was basic-error-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method error was basic-error-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method error was basic-error-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method error was basic-error-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method error was basic-error-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method error was basic-error-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method error was basic-error-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method error was basic-error-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method errorHtml was basic-error-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method errorHtml was basic-error-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method errorHtml was basic-error-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method errorHtml was basic-error-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method errorHtml was basic-error-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method errorHtml was basic-error-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method errorHtml was basic-error-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method errorHtml was basic-error-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method createAccount was init-security-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method verifyAccount was init-security-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method listAccounts was accounts-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method addAccounts was accounts-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method deleteAccounts was accounts-controller
+2018-10-06 22:18:20 [main] INFO  s.d.s.w.ClassOrApiAnnotationResourceGrouping - Group for method getAccounts was accounts-controller
+2018-10-06 22:18:20 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8086 (http)
+2018-10-06 22:18:20 [main] INFO  c.t.dev.recipes.RecipesApplication - Started RecipesApplication in 11.966 seconds (JVM running for 12.741)
+2018-10-06 22:19:04 [http-nio-8086-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-10-06 22:19:04 [http-nio-8086-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-10-06 22:19:04 [http-nio-8086-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 40 ms
+2018-10-06 22:19:04 [http-nio-8086-exec-1] DEBUG c.t.d.r.s.JwtAuthenticationTokenFilter - Request is to process authentication
+2018-10-06 22:19:04 [http-nio-8086-exec-1] DEBUG c.t.d.r.s.JwtAuthenticationTokenFilter - Authentication success. Updating SecurityContextHolder to contain: org.springframework.security.authentication.UsernamePasswordAuthenticationToken@b496f391: Principal: com.truextend.dev.recipes.security.utilSecurity.JwtUserDetails@4b5ac9d2; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: null

@@ -1,7 +1,11 @@
 package com.truextend.dev.recipes.model;
 
+import com.google.gson.annotations.Expose;
+
 public class MessageError {
+    @Expose
     private String message;
+    @Expose
     private Integer status;
 
     public MessageError() {

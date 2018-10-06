@@ -1,9 +1,14 @@
 package com.truextend.dev.recipes.model;
 
 import com.google.gson.annotations.Expose;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,60 +21,68 @@ import java.util.List;
 public class Accounts {
     //attributes
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @NotNull
     @Expose
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Expose
+    @Temporal(TemporalType.DATE)
     private Date    birthDate;
 
     @Column
     @Expose
+    @NotNull
+    @NotEmpty
+    @Pattern(regexp ="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.(?:[a-zA-Z]{2,6})$")
     private String  email;
 
     @Column
     @Expose
-    private String  name;
+    @NotNull
+    @Size(min = 2, max = 100)
+    private String  firstName;
 
     @Column
     @Expose
+    @Size(max = 100)
+    private String  lastName = "";
+
+    @Column
+    @Expose
+    @NotNull
+    @Size(min = 3, max = 15)
     private String  password;
 
     @Column
     @Expose
-    private Integer state;
+    @NotNull
+    @Max(1)
+    private Integer state = 1;
 
     @OneToMany(mappedBy = "accounts", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Recipes>listRecipes = new ArrayList<Recipes>();
 
-    @Transient
     @Expose
+    @Transient
     private String token;
 
     //constructors
     public Accounts() {
+
     }
 
-    public Accounts(Integer id, Date birthDate, String email, String name, String password, Integer state) {
+    public Accounts(Integer id, Date birthDate, String email, String firstName, String lastName, String password, Integer state) {
         this.id = id;
         this.birthDate = birthDate;
         this.email = email;
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.password = password;
         this.state = state;
     }
 
-    public Accounts(Integer id, Date birthDate, String email, String name, String password, Integer state, List<Recipes> listRecipes) {
-        this.id = id;
-        this.birthDate = birthDate;
-        this.email = email;
-        this.name = name;
-        this.password = password;
-        this.state = state;
-        this.listRecipes = listRecipes;
-    }
 
     //methods get and set
     public Integer getId() {
@@ -96,12 +109,20 @@ public class Accounts {
         this.email = email;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPassword() {

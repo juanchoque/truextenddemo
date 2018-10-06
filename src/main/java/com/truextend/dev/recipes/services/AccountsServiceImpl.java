@@ -143,16 +143,24 @@ public class AccountsServiceImpl implements AccountsService {
         boolean status = false;
 
         HashMap resultMap = new HashMap();
+        Accounts verifyAccount = null;
 
         try {
-            this.accountRepository.save(accounts);
+            verifyAccount = this.accountRepository.findAccountByByEmail(accounts);
+            if(verifyAccount == null){
+                this.accountRepository.save(accounts);
 
-            resultMap.put(ConstantsRecipes.OBJECT, accounts);
-            status = true;
+                resultMap.put(ConstantsRecipes.OBJECT, accounts);
+                status = true;
+            }
+            else{
+                messageTemp = ConstantsRecipes.MESSAGE_EXIST_USER_ACCOUNT;
+                status = false;
+            }
 
         }catch (Exception er){
             messageTemp  = er.getMessage();
-            status = true;
+            status = false;
         }
 
         resultMap.put(ConstantsRecipes.MESSAGE, messageTemp);

@@ -1,6 +1,7 @@
 package com.truextend.dev.recipes.security;
 
 import com.truextend.dev.recipes.model.SecurityDataObject;
+import com.truextend.dev.recipes.util.ConstantsRecipes;
 import com.truextend.dev.recipes.util.RecipesUtil;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -24,7 +25,7 @@ public class JwtGenerator {
         return Jwts.builder()
                 .setClaims(claims)
                 .setExpiration(date)
-                .signWith(SignatureAlgorithm.HS512, "truextend")
+                .signWith(SignatureAlgorithm.HS512, ConstantsRecipes.SECRET)
                 .compact();
     }
 }

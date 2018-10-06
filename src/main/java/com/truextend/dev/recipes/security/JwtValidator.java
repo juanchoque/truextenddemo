@@ -1,6 +1,7 @@
 package com.truextend.dev.recipes.security;
 
 import com.truextend.dev.recipes.model.SecurityDataObject;
+import com.truextend.dev.recipes.util.ConstantsRecipes;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import org.springframework.stereotype.Component;
@@ -8,27 +9,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class JwtValidator {
 
-
-    private String secret = "tecnosim";
-
     public SecurityDataObject validate(String token) {
 
         SecurityDataObject securityDataObject = null;
         try {
-            try {
-                token = token.substring(token.indexOf(" ") + 1);
-            }catch (Exception ex){
-
-            }
-
             Claims body = Jwts.parser()
-                    .setSigningKey(secret)
+                    .setSigningKey(ConstantsRecipes.SECRET)
                     .parseClaimsJws(token)
                     .getBody();
 
             securityDataObject = new SecurityDataObject();
 
-            //usuarios.setIdPersona(body.getSubject());
             securityDataObject.setIdAccount(Integer.parseInt(body.get("userId").toString()));
         }
         catch (Exception e) {

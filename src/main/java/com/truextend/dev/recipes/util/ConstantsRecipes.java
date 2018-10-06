@@ -8,6 +8,7 @@ public class ConstantsRecipes {
     public static final String EMPTY_VALUE = "";
     public static final String MESSAGE = "MESSAGE";
     public static final String OBJECT = "OBJECT";
+    public static final String SECRET = "truextend";
     public static final String STATUS = "STATUS";
 
     //user messages
@@ -34,4 +35,6 @@ public class ConstantsRecipes {
     public static final String DESC_LIST_ACCOUNTS = "Return list of users accounts";
     public static final String DESC_GET_ACCOUNTS = "Return an user accounts";
     public static final String VALUE_ACCOUNTS_CONTROLLER = "Accounts Controller";
+
+    public static final String MESSAGE_EXIST_USER_ACCOUNT = "The account is already registered";
 }

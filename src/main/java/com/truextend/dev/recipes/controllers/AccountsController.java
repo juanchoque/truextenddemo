@@ -32,7 +32,7 @@ public class AccountsController {
      */
     @ApiOperation(value = ConstantsRecipes.DESC_LIST_ACCOUNTS)
     @ResponseBody
-    @RequestMapping(value = "/list", method = RequestMethod.GET, produces = ConstantsRecipes.APP_JSON)
+    @RequestMapping(value = "/list", method = RequestMethod.POST, produces = ConstantsRecipes.APP_JSON)
     public ResponseEntity<Object> listAccounts(@RequestBody Accounts accounts) {
         boolean continueHash = false;
         String messageHash = "";
@@ -74,7 +74,7 @@ public class AccountsController {
     }
 
     /**
-     * create a nuew account
+     * create a new account
      * @param accounts
      * @return
      */

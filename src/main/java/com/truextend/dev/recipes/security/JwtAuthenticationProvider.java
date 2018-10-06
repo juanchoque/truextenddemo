@@ -37,22 +37,11 @@ public class JwtAuthenticationProvider extends AbstractUserDetailsAuthentication
         JwtValidator validator = new JwtValidator();
         SecurityDataObject securityDataObject = null;
 
-        try {
-            String authenticationToken = token.substring(token.indexOf(" ") + 1);
-            String codeHeader = token.substring(0, token.indexOf(" "));
-
-            String idAccion = codeHeader.substring(1, codeHeader.length());
-            String flag = codeHeader.substring(0,1);
-
-            securityDataObject = validator.validate(authenticationToken);
+            securityDataObject = validator.validate(token);
 
             if (securityDataObject.getIdAccount() == null) {
                 throw new RuntimeException("JWT Token is incorrect>");
             }
-        }catch (Exception err){
-            err.printStackTrace();
-            throw new RuntimeException("JWT Token is incorrect or you need permission for this operation");
-        }
 
         List<GrantedAuthority> grantedAuthorities = AuthorityUtils.commaSeparatedStringToAuthorityList(String.valueOf(securityDataObject.getIdRol()));
         return new JwtUserDetails(securityDataObject.getIdAccount(),

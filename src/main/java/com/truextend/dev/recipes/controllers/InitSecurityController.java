@@ -18,12 +18,58 @@ import java.util.HashMap;
 
 @RestController
 @RequestMapping("token")
-public class SecurityJWTController {
+public class InitSecurityController {
 
     @Autowired
     private AccountsService accountsService;
     @Autowired
     private JwtGenerator jwtGenerator;
+
+    /**
+     * create a new account
+     * @param accounts
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value="/createaccount", method= RequestMethod.POST, produces = ConstantsRecipes.APP_JSON)
+    public ResponseEntity<Object> createAccount(@RequestBody Accounts accounts) {
+        boolean continueHash = false;
+        String messageHash = "";
+        String resultJson = "";
+
+        Gson gson = new GsonBuilder()
+                .excludeFieldsWithoutExposeAnnotation()
+                .setDateFormat(ConstantsRecipes.FORMAT_DATE_YYYY_MM_DD_HH_MM_SS)
+                .create();
+        HttpStatus httpStatus = HttpStatus.OK;
+        RecipesUtil recipesUtil = new RecipesUtil();
+        HashMap resHashMap = null;
+        Accounts resultAccounts = new Accounts();
+        ResponseEntity<Object> response = null;
+
+        try {
+            resHashMap = this.accountsService.saveOrUpdateAccounts(accounts);
+            continueHash = (boolean)resHashMap.get(ConstantsRecipes.STATUS);
+            if(continueHash){
+                resultAccounts = (Accounts) resHashMap.get(ConstantsRecipes.OBJECT);
+                resultJson = gson.toJson(resultAccounts, Accounts.class);
+            }
+            else{
+                messageHash = (String)resHashMap.get(ConstantsRecipes.MESSAGE);
+                httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
+                MessageError messages = recipesUtil.getFormatMessage(messageHash, httpStatus);
+                resultJson = gson.toJson(messages);
+            }
+        }catch (Exception ex){
+            messageHash = ex.getMessage();
+            httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
+            MessageError messages = recipesUtil.getFormatMessage(messageHash, httpStatus);
+            resultJson = gson.toJson(messages);
+        }
+        response = new ResponseEntity<Object>(resultJson, httpStatus);
+
+        return response;
+    }
 
     /**
      * method validate user accoounts and get JWT security

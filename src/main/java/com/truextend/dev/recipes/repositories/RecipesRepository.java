@@ -13,4 +13,7 @@ public interface RecipesRepository extends CrudRepository<Recipes, Integer> {
     @Query("UPDATE Recipes r SET r.state = :#{#recipes.state} where r.id = :#{#recipes.id}")
     @Transactional
     void deleteRecipes(@Param("recipes") Recipes recipes);
+
+    @Query("SELECT * from Recipes r where r.accounts.id = :#{#recipes.accounts.id}")
+    Recipes findAccountByAccounts(@Param("recipes") Recipes recipes);
 }

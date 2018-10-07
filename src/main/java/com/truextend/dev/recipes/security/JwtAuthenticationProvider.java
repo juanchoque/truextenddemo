@@ -4,6 +4,7 @@ import com.truextend.dev.recipes.model.SecurityDataObject;
 import com.truextend.dev.recipes.security.utilSecurity.JwtAuthenticationToken;
 import com.truextend.dev.recipes.security.utilSecurity.JwtUserDetails;
 import com.truextend.dev.recipes.security.utilSecurity.SecurityServiceImpl;
+import com.truextend.dev.recipes.util.ConstantsRecipes;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider;
 import org.springframework.security.core.AuthenticationException;
@@ -40,7 +41,7 @@ public class JwtAuthenticationProvider extends AbstractUserDetailsAuthentication
             securityDataObject = validator.validate(token);
 
             if (securityDataObject.getIdAccount() == null) {
-                throw new RuntimeException("JWT Token is incorrect>");
+                throw new RuntimeException(ConstantsRecipes.INCORRECT_TOKEN);
             }
 
         List<GrantedAuthority> grantedAuthorities = AuthorityUtils.commaSeparatedStringToAuthorityList(String.valueOf(securityDataObject.getIdRol()));

@@ -1,10 +1,14 @@
 package com.truextend.dev.recipes.model;
 
 import com.google.gson.annotations.Expose;
+import com.truextend.dev.recipes.util.ConstantsRecipes;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import javax.validation.Valid;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "ingredients")
@@ -12,21 +16,23 @@ public class Ingredients {
     //attributes
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @NotNull
     @Expose
     private Integer id;
 
     @Column
     @Expose
-    private String name;
+    @NotNull
+    @Size(max = 500)
+    private String name = ConstantsRecipes.EMPTY_VALUE;
 
     @Column
     @Expose
-    private Integer state;
+    @NotNull
+    @Max(1)
+    private Integer state = ConstantsRecipes.STATE_ACTIVE;
 
     @ManyToOne
     @NotNull
-    @Valid
     private Recipes recipes;
 
     //contructors

@@ -1,5 +1,7 @@
 package com.truextend.dev.recipes.services;
 
+import com.truextend.dev.recipes.model.Accounts;
+import com.truextend.dev.recipes.model.Ingredients;
 import com.truextend.dev.recipes.model.Recipes;
 import com.truextend.dev.recipes.repositories.RecipesRepository;
 import com.truextend.dev.recipes.util.ConstantsRecipes;
@@ -15,6 +17,12 @@ public class RecipesServiceImpl implements RecipesService {
 
     @Autowired
     private RecipesRepository recipesRepository;
+
+    @Autowired
+    private AccountsService accountsService;
+
+    @Autowired
+    private IngredientsService ingredientsService;
 
     /**
      * method that delete a recipes in data base
@@ -71,7 +79,7 @@ public class RecipesServiceImpl implements RecipesService {
             }
             recipes.setState(ConstantsRecipes.STATE_ACTIVE);
 
-            this.recipesRepository.findAll().forEach(listRecipes::add);
+            listRecipes = this.recipesRepository.findAllRecipes(recipes);
             if(listRecipes != null){
                 resultMap.put(ConstantsRecipes.OBJECT, listRecipes);
                 status = true;
@@ -116,8 +124,9 @@ public class RecipesServiceImpl implements RecipesService {
         return resultMap;
     }
 
+
     /**
-     * method for get account by email and password
+     * method get recipes by accounts
      * @param recipes
      * @return
      */
@@ -151,21 +160,65 @@ public class RecipesServiceImpl implements RecipesService {
 
     /**
      * Method save or update in data base
+     * @param idAcounts
      * @param recipes
      * @return
      */
     @Override
-    public HashMap saveOrUpdateRecipes(Recipes recipes) {
+    public HashMap saveOrUpdateRecipes(Integer idAcounts, Recipes recipes) {
+        boolean continueHash = false;
         String messageTemp = "";
         boolean status = false;
 
+        Accounts accounts = null;
         HashMap resultMap = new HashMap();
+        Recipes resultRecipes = null;
 
         try {
-            this.recipesRepository.save(recipes);
+            accounts = new Accounts();
+            accounts.setId(idAcounts);
 
-            resultMap.put(ConstantsRecipes.OBJECT, recipes);
-            status = true;
+            //get account required for insert recipes
+            resultMap = this.accountsService.getAccountsById(accounts);
+            continueHash = (boolean)resultMap.get(ConstantsRecipes.STATUS);
+            if(continueHash){
+                accounts = (Accounts) resultMap.get(ConstantsRecipes.OBJECT);
+                if(accounts != null){//exist accounts
+                    if(recipes.getId() != null){
+                        resultRecipes = this.recipesRepository.findOne(recipes.getId());
+                    }
+
+                    if(resultRecipes != null){
+                        //exist recipe delete data before, after that save again with new data ingredients
+                        this.ingredientsService.deteleIngredientsByRecipe(recipes);
+                    }
+
+                    //set accounts
+                    recipes.setAccounts(accounts);
+
+                    //save or update data recipes
+                    this.recipesRepository.save(recipes);
+
+                    //save ingredients
+                    if(recipes.getListTIngredients() != null){
+                        for(Ingredients ingredients : recipes.getListTIngredients()){
+                            ingredients.setRecipes(recipes);
+                            this.ingredientsService.saveOrUpdateIngredients(ingredients);
+                        }
+                    }
+
+                    resultMap.put(ConstantsRecipes.OBJECT, recipes);
+                    status = true;
+                }
+                else{
+                    messageTemp  = ConstantsRecipes.MESSAGE_NOT_FOUND_OBJECT;
+                    status = false;
+                }
+            }
+            else{
+                messageTemp  = ConstantsRecipes.MESSAGE_NOT_FOUND_OBJECT;
+                status = false;
+            }
         }catch (Exception er){
             messageTemp  = er.getMessage();
             status = false;

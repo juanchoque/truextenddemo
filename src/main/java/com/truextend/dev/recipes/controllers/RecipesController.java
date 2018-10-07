@@ -4,6 +4,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.truextend.dev.recipes.model.Recipes;
 import com.truextend.dev.recipes.model.MessageError;
+import com.truextend.dev.recipes.model.SecurityDataObject;
+import com.truextend.dev.recipes.security.JwtValidator;
 import com.truextend.dev.recipes.services.RecipesService;
 import com.truextend.dev.recipes.util.ConstantsRecipes;
 import com.truextend.dev.recipes.util.RecipesUtil;
@@ -23,7 +25,10 @@ import java.util.List;
 @Api(value = ConstantsRecipes.VALUE_RECIPES_CONTROLLER, description = ConstantsRecipes.DESC_RECIPES_CONTROLLER)
 public class RecipesController {
     @Autowired
-    private RecipesService RecipesService;
+    private RecipesService recipesService;
+
+    @Autowired
+    private JwtValidator jwtValidator;
 
     /**
      * List all recipes
@@ -49,7 +54,7 @@ public class RecipesController {
         HashMap resultHashMap = null;
 
         try {
-            resultHashMap = this.RecipesService.getAllRecipes(recipes);
+            resultHashMap = this.recipesService.getAllRecipes(recipes);
             continueHash = (boolean) resultHashMap.get(ConstantsRecipes.STATUS);
             if (continueHash) {
                 listRecipes = (List<Recipes>) resultHashMap.get(ConstantsRecipes.OBJECT);
@@ -81,8 +86,9 @@ public class RecipesController {
     @ApiOperation(value = ConstantsRecipes.DESC_ADD_RECIPES)
     @ResponseBody
     @RequestMapping(value="/add", method= RequestMethod.POST, produces = ConstantsRecipes.APP_JSON)
-    public ResponseEntity<Object> addRecipes(@RequestBody Recipes recipes) {
+    public ResponseEntity<Object> addRecipes(@RequestHeader(value="Authorization") String token, @RequestBody Recipes recipes) {
         boolean continueHash = false;
+        Integer idAccounts = 0;
         String messageHash = "";
         String resultJson = "";
 
@@ -95,16 +101,29 @@ public class RecipesController {
         HashMap resHashMap = null;
         Recipes resultRecipes = new Recipes();
         ResponseEntity<Object> response = null;
+        SecurityDataObject securityDataObject = null;
 
         try {
-            resHashMap = this.RecipesService.saveOrUpdateRecipes(recipes);
-            continueHash = (boolean)resHashMap.get(ConstantsRecipes.STATUS);
-            if(continueHash){
-                resultRecipes = (Recipes) resHashMap.get(ConstantsRecipes.OBJECT);
-                resultJson = gson.toJson(resultRecipes, Recipes.class);
+            //get data from token, get idAccount
+            securityDataObject = this.jwtValidator.validate(token);
+            if(securityDataObject != null) {//user authorized */
+                idAccounts = securityDataObject.getIdAccount();
+
+                resHashMap = this.recipesService.saveOrUpdateRecipes(idAccounts, recipes);
+                continueHash = (boolean)resHashMap.get(ConstantsRecipes.STATUS);
+                if(continueHash){
+                    resultRecipes = (Recipes) resHashMap.get(ConstantsRecipes.OBJECT);
+                    resultJson = gson.toJson(resultRecipes, Recipes.class);
+                }
+                else{
+                    messageHash = (String)resHashMap.get(ConstantsRecipes.MESSAGE);
+                    httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
+                    MessageError messages = recipesUtil.getFormatMessage(messageHash, httpStatus);
+                    resultJson = gson.toJson(messages);
+                }
             }
             else{
-                messageHash = (String)resHashMap.get(ConstantsRecipes.MESSAGE);
+                messageHash = ConstantsRecipes.UNAUTHORIZED_USER;
                 httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
                 MessageError messages = recipesUtil.getFormatMessage(messageHash, httpStatus);
                 resultJson = gson.toJson(messages);
@@ -144,7 +163,7 @@ public class RecipesController {
         ResponseEntity<Object> response = null;
 
         try {
-            resHashMap = this.RecipesService.getRecipesByAccounts(recipes);
+            resHashMap = this.recipesService.getRecipesByAccounts(recipes);
             continueHash = (boolean)resHashMap.get(ConstantsRecipes.STATUS);
             if(continueHash){
                 resultRecipes = (Recipes) resHashMap.get(ConstantsRecipes.OBJECT);
@@ -191,7 +210,7 @@ public class RecipesController {
         ResponseEntity<Object> response = null;
 
         try {
-            resHashMap = this.RecipesService.deteleRecipes(recipes);
+            resHashMap = this.recipesService.deteleRecipes(recipes);
             continueHash = (boolean) resHashMap.get(ConstantsRecipes.STATUS);
             if (continueHash) {
                 resultRecipes = (Recipes) resHashMap.get(ConstantsRecipes.OBJECT);

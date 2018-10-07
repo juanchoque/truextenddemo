@@ -38,7 +38,10 @@ public class ConstantsRecipes {
     public static final String DESC_DELETE_ACCOUNTS = "Delete users accounts";
     public static final String DESC_LIST_ACCOUNTS = "Return list of users accounts";
     public static final String DESC_GET_ACCOUNTS = "Return an user accounts";
+    public static final String INCORRECT_TOKEN = "JWT Token is incorrect";
+    public static final String MISSING_TOKEN = "Missing token";
     public static final String VALUE_ACCOUNTS_CONTROLLER = "Accounts Controller";
+    public static final String UNAUTHORIZED = "UNAUTHORIZED";
 
     //info recipes controller for swagger
     public static final String DESC_ADD_RECIPES = "Create or edit cooking recipes";

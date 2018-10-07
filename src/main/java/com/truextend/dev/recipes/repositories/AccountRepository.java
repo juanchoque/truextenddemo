@@ -16,7 +16,7 @@ public interface AccountRepository extends CrudRepository<Accounts, Integer> {
     @Query("FROM Accounts a where a.email = :#{#accounts.email}")
     Accounts findAccountByByEmail(@Param("accounts")Accounts verifyAccount);
 
-    @Query("FROM Accounts a where a.state = :#{#accounts.state}")
+    @Query("FROM Accounts a where a.state = :#{#accounts.state}  order by a.id desc")
     List<Accounts> findAllAccount(@Param("accounts")Accounts accounts);
 
     @Modifying

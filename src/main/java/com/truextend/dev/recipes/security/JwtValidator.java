@@ -24,7 +24,7 @@ public class JwtValidator {
         }
         catch (Exception e) {
             e.printStackTrace();
-            throw new RuntimeException("JWT Token is incorrect>");
+            throw new RuntimeException(ConstantsRecipes.INCORRECT_TOKEN);
         }
 
         return securityDataObject;

@@ -1,6 +1,7 @@
 package com.truextend.dev.recipes.security;
 
 import com.truextend.dev.recipes.security.utilSecurity.JwtAuthenticationToken;
+import com.truextend.dev.recipes.util.ConstantsRecipes;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
@@ -19,6 +20,7 @@ public class JwtAuthenticationTokenFilter extends AbstractAuthenticationProcessi
         super("/accounts/**");
         this.setRequiresAuthenticationRequestMatcher(new OrRequestMatcher(
             new AntPathRequestMatcher("/accounts/**")
+                    ,new AntPathRequestMatcher("/recipes/**")
         ));
     }
 
@@ -26,9 +28,8 @@ public class JwtAuthenticationTokenFilter extends AbstractAuthenticationProcessi
     public Authentication attemptAuthentication(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws AuthenticationException, IOException, ServletException {
 
         String header = httpServletRequest.getHeader("Authorization");
-        System.out.println("...." + header);
         if (header == null) {
-            throw new RuntimeException("JWT Token is missing");
+            throw new RuntimeException(ConstantsRecipes.MISSING_TOKEN);
         }
 
         JwtAuthenticationToken token = new JwtAuthenticationToken(header);

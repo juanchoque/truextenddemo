@@ -52,7 +52,7 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(
                         "/accounts/**",
-                        "/comandos/**"
+                        "/recipes/**"
                 )
                 .authenticated()
                 .and()

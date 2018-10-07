@@ -13,6 +13,6 @@ public interface RecipesService {
 
     HashMap getRecipesByAccounts(Recipes recipes);
 
-    HashMap saveOrUpdateRecipes(Recipes recipes);
+    HashMap saveOrUpdateRecipes(Integer idAcounts, Recipes recipes);
 
 }

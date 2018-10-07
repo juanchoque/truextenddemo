@@ -32,6 +32,12 @@ public class Accounts {
     private Date    birthDate;
 
     @Column
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Expose
+    @Temporal(TemporalType.DATE)
+    private Date    createDate = new Date();
+
+    @Column
     @Expose
     @NotNull
     @NotEmpty
@@ -155,5 +161,13 @@ public class Accounts {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public Date getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 }

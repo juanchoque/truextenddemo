@@ -7,8 +7,12 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 public interface RecipesRepository extends CrudRepository<Recipes, Integer> {
+    @Query("FROM Recipes r where r.state = :#{#recipes.state} order by r.id desc")
+    List<Recipes> findAllRecipes(@Param("recipes")Recipes recipes);
+
     @Modifying
     @Query("UPDATE Recipes r SET r.state = :#{#recipes.state} where r.id = :#{#recipes.id}")
     @Transactional

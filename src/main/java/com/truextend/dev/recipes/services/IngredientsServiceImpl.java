@@ -1,8 +1,10 @@
 package com.truextend.dev.recipes.services;
 
 import com.truextend.dev.recipes.model.Ingredients;
+import com.truextend.dev.recipes.model.Recipes;
 import com.truextend.dev.recipes.repositories.IngredientsRepository;
 import com.truextend.dev.recipes.util.ConstantsRecipes;
+import com.wordnik.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -135,6 +137,27 @@ public class IngredientsServiceImpl implements IngredientsService {
             status = true;
         }catch (Exception er){
             messageTemp  = er.getMessage();
+            status = false;
+        }
+
+        resultMap.put(ConstantsRecipes.MESSAGE, messageTemp);
+        resultMap.put(ConstantsRecipes.STATUS, status);
+
+        return resultMap;
+    }
+
+    @Override
+    public HashMap deteleIngredientsByRecipe(Recipes recipes) {
+        String messageTemp = "";
+        boolean status = false;
+
+        HashMap resultMap = new HashMap();
+
+        try {
+            this.ingredientsRepository.deleteAllByRecipes(recipes);
+            status = true;
+        }catch (Exception er){
+            messageTemp = er.getMessage();
             status = false;
         }
 

@@ -200,8 +200,8 @@ public class RecipesServiceImpl implements RecipesService {
                     this.recipesRepository.save(recipes);
 
                     //save ingredients
-                    if(recipes.getListTIngredients() != null){
-                        for(Ingredients ingredients : recipes.getListTIngredients()){
+                    if(recipes.getListIngredients() != null){
+                        for(Ingredients ingredients : recipes.getListIngredients()){
                             ingredients.setRecipes(recipes);
                             this.ingredientsService.saveOrUpdateIngredients(ingredients);
                         }

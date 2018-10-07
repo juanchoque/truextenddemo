@@ -45,6 +45,7 @@ public class Recipes {
     @Max(1)
     private Integer state = ConstantsRecipes.STATE_ACTIVE;
 
+    @Expose
     @ManyToOne
     @NotNull
     private Accounts accounts;

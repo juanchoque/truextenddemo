@@ -51,8 +51,10 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
                 .disable()
                 .authorizeRequests()
                 .antMatchers(
-                        "/accounts/**",
-                        "/recipes/**"
+                        "/accounts/add/**"
+                        ,"/recipes/add/**"
+                        ,"/recipes/get/**"
+                        ,"/recipes/delete/**"
                 )
                 .authenticated()
                 .and()

@@ -17,10 +17,12 @@ import java.io.IOException;
 public class JwtAuthenticationTokenFilter extends AbstractAuthenticationProcessingFilter {
 
     public JwtAuthenticationTokenFilter() {
-        super("/accounts/**");
+        super("/accounts/add/**");
         this.setRequiresAuthenticationRequestMatcher(new OrRequestMatcher(
-            new AntPathRequestMatcher("/accounts/**")
-                    ,new AntPathRequestMatcher("/recipes/**")
+            new AntPathRequestMatcher("/accounts/add/**")
+                ,new AntPathRequestMatcher("/recipes/add/**")
+                ,new AntPathRequestMatcher("/recipes/get/**")
+                ,new AntPathRequestMatcher("/recipes/delete/**")
         ));
     }
 

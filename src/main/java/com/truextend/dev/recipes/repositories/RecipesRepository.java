@@ -10,7 +10,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 public interface RecipesRepository extends CrudRepository<Recipes, Integer> {
-    @Query("FROM Recipes r where r.state = :#{#recipes.state} order by r.id desc")
+    @Query("FROM Recipes r where (r.name like '%' || :#{#recipes.name} || '%') and (r.preparation like '%' || :#{#recipes.preparation} || '%') and r.state = :#{#recipes.state} order by r.id desc")
     List<Recipes> findAllRecipes(@Param("recipes")Recipes recipes);
 
     @Modifying

@@ -1,6 +1,5 @@
 package com.truextend.dev.recipes.controllers;
 
-import com.truextend.dev.recipes.model.Accounts;
 import com.truextend.dev.recipes.model.Recipes;
 import com.truextend.dev.recipes.security.JwtValidator;
 import com.truextend.dev.recipes.services.RecipesService;

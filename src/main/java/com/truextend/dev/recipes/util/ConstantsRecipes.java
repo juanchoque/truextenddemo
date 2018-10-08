@@ -5,6 +5,7 @@ public class ConstantsRecipes {
     public static final String APP_JSON = "application/json";
 
     //general constants
+    public static final String BASE_PACKAGE = "com.truextend.dev.recipes";
     public static final String EMPTY_VALUE = "";
     public static final String MESSAGE = "MESSAGE";
     public static final String OBJECT = "OBJECT";
@@ -50,5 +51,10 @@ public class ConstantsRecipes {
     public static final String DESC_GET_RECIPES = "Return a cooking recipe";
     public static final String DESC_RECIPES_CONTROLLER = "Administration cooking recipes";
     public static final String VALUE_RECIPES_CONTROLLER = "Recipes Controller";
+
+    //info for exceptions
+    public static final String DEFAULT_USER = "0";
+    public static final int ID_RESERVED = 1;
+    public static final String PACKAGE_SERVICES = "services";
 
 }

@@ -16,7 +16,7 @@ public class SwaggerConfig {
     public Docket recipeApi(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.truextend.dev.recipes1"))
+                .apis(RequestHandlerSelectors.basePackage(ConstantsRecipes.BASE_PACKAGE))
                 .paths(regex("/.*"))
                 .build()
                 .apiInfo(metaInfo());

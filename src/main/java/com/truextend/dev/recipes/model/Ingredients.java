@@ -2,10 +2,8 @@ package com.truextend.dev.recipes.model;
 
 import com.google.gson.annotations.Expose;
 import com.truextend.dev.recipes.util.ConstantsRecipes;
-import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
-import javax.validation.Valid;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;

@@ -31,7 +31,7 @@ public class RecipesController {
     private JwtValidator jwtValidator;
 
     /**
-     * List all recipes
+     * List all recipes permit make filter by name and preparation recipe
      * @param recipes
      * @return
      */
@@ -79,7 +79,7 @@ public class RecipesController {
     }
 
     /**
-     * create a new account
+     * create a new recipe and edit recipe when send idrecipe
      * @param recipes
      * @return
      */
@@ -107,6 +107,7 @@ public class RecipesController {
             //get data from token, get idAccount
             securityDataObject = this.jwtValidator.validate(token);
             if(securityDataObject != null) {//user authorized */
+                //id for current user
                 idAccounts = securityDataObject.getIdAccount();
 
                 resHashMap = this.recipesService.saveOrUpdateRecipes(idAccounts, recipes);
@@ -140,7 +141,7 @@ public class RecipesController {
     }
 
     /**
-     * create a nuew account
+     * get a recipe by idrecipe
      * @param recipes
      * @return
      */
@@ -187,13 +188,13 @@ public class RecipesController {
     }
 
     /**
-     * method delete user accont only logical deleting (change state to 0)
+     * method delete recipe only logical deleting (change state to 0)
      * @param recipes
      * @return
      */
     @ApiOperation(value = ConstantsRecipes.DESC_DELETE_RECIPES)
     @ResponseBody
-    @RequestMapping(value = "/delete", method = RequestMethod.DELETE, produces = ConstantsRecipes.APP_JSON)
+    @RequestMapping(value = "/delete", method = RequestMethod.POST, produces = ConstantsRecipes.APP_JSON)
     public ResponseEntity<Object> deleteRecipes(@RequestBody Recipes recipes) {
         boolean continueHash = false;
         String messageHash = "";

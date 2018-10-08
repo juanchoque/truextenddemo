@@ -1,5 +1,6 @@
 package com.truextend.dev.recipes.services;
 
+import com.truextend.dev.recipes.error.ErrorRecipes;
 import com.truextend.dev.recipes.model.Accounts;
 import com.truextend.dev.recipes.repositories.AccountRepository;
 import com.truextend.dev.recipes.util.ConstantsRecipes;
@@ -15,6 +16,9 @@ public class AccountsServiceImpl implements AccountsService {
 
     @Autowired
     private AccountRepository accountRepository;
+
+    @Autowired
+    private ErrorRecipes errorRecipes;
 
     /**
      * method that delete a accounts in data base
@@ -42,8 +46,14 @@ public class AccountsServiceImpl implements AccountsService {
                 messageTemp = ConstantsRecipes.MESSAGE_NOT_FOUND_OBJECT;
             }
         }catch (Exception er){
-            messageTemp = er.getMessage();
             status = false;
+            //save error in data base
+            messageTemp = this.errorRecipes.insert(
+                    er,
+                    this.getClass(),
+                    ConstantsRecipes.PACKAGE_SERVICES,
+                    ConstantsRecipes.DEFAULT_USER,
+                    ConstantsRecipes.ID_RESERVED);
         }
 
         resultMap.put(ConstantsRecipes.MESSAGE, messageTemp);
@@ -78,7 +88,14 @@ public class AccountsServiceImpl implements AccountsService {
             }
         }catch (Exception er){
             status = false;
-            messageTemp = er.getMessage();
+            //save error in data base
+            messageTemp = this.errorRecipes.insert(
+                    er,
+                    this.getClass(),
+                    ConstantsRecipes.PACKAGE_SERVICES,
+                    ConstantsRecipes.DEFAULT_USER,
+                    ConstantsRecipes.ID_RESERVED);
+
         }
 
         resultMap.put(ConstantsRecipes.MESSAGE, messageTemp);
@@ -107,7 +124,13 @@ public class AccountsServiceImpl implements AccountsService {
             }
         }catch (Exception er){
             status = false;
-            messageTemp = er.getMessage();
+            //save error in data base
+            messageTemp = this.errorRecipes.insert(
+                    er,
+                    this.getClass(),
+                    ConstantsRecipes.PACKAGE_SERVICES,
+                    ConstantsRecipes.DEFAULT_USER,
+                    ConstantsRecipes.ID_RESERVED);
         }
 
         resultMap.put(ConstantsRecipes.MESSAGE, messageTemp);
@@ -140,7 +163,13 @@ public class AccountsServiceImpl implements AccountsService {
             }
         }catch (Exception er){
             status = false;
-            messageTemp = er.getMessage();
+            //save error in data base
+            messageTemp = this.errorRecipes.insert(
+                    er,
+                    this.getClass(),
+                    ConstantsRecipes.PACKAGE_SERVICES,
+                    ConstantsRecipes.DEFAULT_USER,
+                    ConstantsRecipes.ID_RESERVED);
         }
 
         resultMap.put(ConstantsRecipes.MESSAGE, messageTemp);
@@ -180,8 +209,14 @@ public class AccountsServiceImpl implements AccountsService {
             }
 
         }catch (Exception er){
-            messageTemp  = er.getMessage();
             status = false;
+            //save error in data base
+            messageTemp = this.errorRecipes.insert(
+                    er,
+                    this.getClass(),
+                    ConstantsRecipes.PACKAGE_SERVICES,
+                    ConstantsRecipes.DEFAULT_USER,
+                    ConstantsRecipes.ID_RESERVED);
         }
 
         resultMap.put(ConstantsRecipes.MESSAGE, messageTemp);

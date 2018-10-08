@@ -26,7 +26,7 @@ public class AccountsController {
     private AccountsService accountsService;
 
     /**
-     * List all accounts
+     * List all accounts from database
      * @param accounts
      * @return
      */
@@ -121,7 +121,7 @@ public class AccountsController {
     }
 
     /**
-     * create a nuew account
+     * method for get account by id
      * @param accounts
      * @return
      */

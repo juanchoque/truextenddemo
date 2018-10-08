@@ -1,10 +1,10 @@
 package com.truextend.dev.recipes.services;
 
+import com.truextend.dev.recipes.error.ErrorRecipes;
 import com.truextend.dev.recipes.model.Ingredients;
 import com.truextend.dev.recipes.model.Recipes;
 import com.truextend.dev.recipes.repositories.IngredientsRepository;
 import com.truextend.dev.recipes.util.ConstantsRecipes;
-import com.wordnik.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +17,9 @@ public class IngredientsServiceImpl implements IngredientsService {
 
     @Autowired
     private IngredientsRepository ingredientsRepository;
+
+    @Autowired
+    private ErrorRecipes errorRecipes;
 
     /**
      * method that delete a ingredients in data base
@@ -44,8 +47,14 @@ public class IngredientsServiceImpl implements IngredientsService {
                 messageTemp = ConstantsRecipes.MESSAGE_NOT_FOUND_OBJECT;
             }
         }catch (Exception er){
-            messageTemp = er.getMessage();
             status = false;
+            //save error in data base
+            messageTemp = this.errorRecipes.insert(
+                    er,
+                    this.getClass(),
+                    ConstantsRecipes.PACKAGE_SERVICES,
+                    ConstantsRecipes.DEFAULT_USER,
+                    ConstantsRecipes.ID_RESERVED);
         }
 
         resultMap.put(ConstantsRecipes.MESSAGE, messageTemp);
@@ -80,7 +89,13 @@ public class IngredientsServiceImpl implements IngredientsService {
             }
         }catch (Exception er){
             status = false;
-            messageTemp = er.getMessage();
+            //save error in data base
+            messageTemp = this.errorRecipes.insert(
+                    er,
+                    this.getClass(),
+                    ConstantsRecipes.PACKAGE_SERVICES,
+                    ConstantsRecipes.DEFAULT_USER,
+                    ConstantsRecipes.ID_RESERVED);
         }
 
         resultMap.put(ConstantsRecipes.MESSAGE, messageTemp);
@@ -109,7 +124,13 @@ public class IngredientsServiceImpl implements IngredientsService {
             }
         }catch (Exception er){
             status = false;
-            messageTemp = er.getMessage();
+            //save error in data base
+            messageTemp = this.errorRecipes.insert(
+                    er,
+                    this.getClass(),
+                    ConstantsRecipes.PACKAGE_SERVICES,
+                    ConstantsRecipes.DEFAULT_USER,
+                    ConstantsRecipes.ID_RESERVED);
         }
 
         resultMap.put(ConstantsRecipes.MESSAGE, messageTemp);
@@ -136,8 +157,14 @@ public class IngredientsServiceImpl implements IngredientsService {
             resultMap.put(ConstantsRecipes.OBJECT, ingredients);
             status = true;
         }catch (Exception er){
-            messageTemp  = er.getMessage();
             status = false;
+            //save error in data base
+            messageTemp = this.errorRecipes.insert(
+                    er,
+                    this.getClass(),
+                    ConstantsRecipes.PACKAGE_SERVICES,
+                    ConstantsRecipes.DEFAULT_USER,
+                    ConstantsRecipes.ID_RESERVED);
         }
 
         resultMap.put(ConstantsRecipes.MESSAGE, messageTemp);
@@ -146,6 +173,11 @@ public class IngredientsServiceImpl implements IngredientsService {
         return resultMap;
     }
 
+    /**
+     * delete ingredients by idrecipe
+     * @param recipes
+     * @return
+     */
     @Override
     public HashMap deteleIngredientsByRecipe(Recipes recipes) {
         String messageTemp = "";
@@ -157,8 +189,14 @@ public class IngredientsServiceImpl implements IngredientsService {
             this.ingredientsRepository.deleteAllByRecipes(recipes);
             status = true;
         }catch (Exception er){
-            messageTemp = er.getMessage();
             status = false;
+            //save error in data base
+            messageTemp = this.errorRecipes.insert(
+                    er,
+                    this.getClass(),
+                    ConstantsRecipes.PACKAGE_SERVICES,
+                    ConstantsRecipes.DEFAULT_USER,
+                    ConstantsRecipes.ID_RESERVED);
         }
 
         resultMap.put(ConstantsRecipes.MESSAGE, messageTemp);

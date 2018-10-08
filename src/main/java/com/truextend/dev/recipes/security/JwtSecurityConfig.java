@@ -39,7 +39,11 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
         return filter;
     }
 
-
+    /**
+     * method for add url and cors filter security
+     * @param http
+     * @throws Exception
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         JwtAuthenticationEntryPoint entryPoint = new JwtAuthenticationEntryPoint();

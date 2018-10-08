@@ -1,8 +1,6 @@
 package com.truextend.dev.recipes.controllers;
 
 import com.truextend.dev.recipes.model.Accounts;
-import com.truextend.dev.recipes.model.Recipes;
-import com.truextend.dev.recipes.security.JwtGenerator;
 import com.truextend.dev.recipes.services.AccountsService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +18,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.util.HashMap;
 
-import static org.junit.Assert.*;
 import static org.mockito.Matchers.any;
 
 @RunWith(SpringRunner.class)

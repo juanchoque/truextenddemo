@@ -16,6 +16,9 @@ import java.io.IOException;
 
 public class JwtAuthenticationTokenFilter extends AbstractAuthenticationProcessingFilter {
 
+    /**
+     * add url for filter security
+     */
     public JwtAuthenticationTokenFilter() {
         super("/accounts/add/**");
         this.setRequiresAuthenticationRequestMatcher(new OrRequestMatcher(
